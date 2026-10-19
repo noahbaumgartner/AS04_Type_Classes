@@ -93,9 +93,9 @@ instance (Show k, Show v) => Show (Map k v) where
 -- Again, use the insertOrMerge function.
 instance (Ord k, Semigroup v) => Semigroup (Map k v) where
   (<>) :: (Ord k, Semigroup v) => Map k v -> Map k v -> Map k v
-  (<>) = 
+  (<>) a b = foldr (uncurry insertOrMerge) a (toList b)
 
 -- Creates an empty Map (easy).
 instance (Ord k, Semigroup v) => Monoid (Map k v) where
   mempty :: (Ord k, Semigroup v) => Map k v
-  mempty = todo
+  mempty = empty
