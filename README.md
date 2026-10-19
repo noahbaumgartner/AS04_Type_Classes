@@ -63,7 +63,7 @@ Add more `.txt` files besides [alice.txt](./alice.txt) to test your implementati
 In this last exercise, you will implement a small imperative language. It consists of expressions and commands. 
 
 ### Expressions and eval
-Here is a GADT modeling expressions of the language.
+Here is a GADT (Generalized Algebraic Data Type) modeling expressions of the language.
 
 ```haskell
 -- Type alias for variable names
